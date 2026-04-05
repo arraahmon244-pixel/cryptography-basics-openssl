@@ -1,0 +1,10 @@
+1️⃣ outputs/message.txt
+This is a secret message
+2️⃣ outputs/encrypted.txt
+3️⃣ outputs/decrypted.txt
+This is a secret message
+4️⃣ outputs/encrypted_rsa.txt
+5️⃣ outputs/decrypted_rsa.txt
+This is a secret message
+6️⃣ keys/private_key.pem
+7️⃣ keys/public_key.pem
