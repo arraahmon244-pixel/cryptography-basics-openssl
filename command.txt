@@ -1,0 +1,12 @@
+# Symmetric Encryption (AES)
+echo "This is a secret message" > message.txt
+openssl enc -aes-256-cbc -salt -pbkdf2 -iter 100000 -in message.txt -out encrypted.txt
+openssl enc -aes-256-cbc -d -pbkdf2 -iter 100000 -in encrypted.txt -out decrypted.txt
+cat decrypted.txt
+
+# Asymmetric Encryption (RSA)
+openssl genpkey -algorithm RSA -out private_key.pem
+openssl rsa -pubout -in private_key.pem -out public_key.pem
+openssl pkeyutl -encrypt -pubin -inkey public_key.pem -in message.txt -out encrypted_rsa.txt
+openssl pkeyutl -decrypt -inkey private_key.pem -in encrypted_rsa.txt -out decrypted_rsa.txt
+cat decrypted_rsa.txt
